@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Authors</h2>
+<form action="/genres" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<% genres.forEach(genre => { %>
+  <div class="genre-row">
+    <div class="genre-name"><%= genre.name %></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/genres/<%= genre.id %>">View</a>
+      <a class="btn btn-primary" href="/genres/<%= genre.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm',
+                  { url: `/genres/${genre.id}` }) %>
+    </div>
+  </div>
+<% }) %>

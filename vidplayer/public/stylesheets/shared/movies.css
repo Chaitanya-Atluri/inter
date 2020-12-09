@@ -1,0 +1,60 @@
+:root {
+  --movie-cover-width: 200px;
+  --movie-cover-width-large: 325px;
+  --movie-cover-aspect-ratio: 0.75;
+}
+
+.movie-cover {
+  width: var(--movie-cover-width);
+  height: calc(var(--movie-cover-width) / var(--movie-cover-aspect-ratio));
+}
+
+.movie-cover-large {
+  --movie-cover-width: var(--movie-cover-width-large);
+}
+
+.movie-grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--movie-cover-width));
+}
+
+.movie-grid-large {
+  grid-template-columns: repeat(auto-fill, var(--movie-cover-width-large));
+}
+
+.movie-details {
+  display: flex;
+}
+
+.movie-details-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.movie-details-grid {
+  display: grid;
+  align-content: flex-start;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.movie-details-btn-grid {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-areas:
+    "edit delete"
+    "genre genre";
+  grid-gap: .5rem;
+  margin-top: .5rem;
+}
+
+.movie-details-genre-button {
+  grid-area: genre;
+  justify-self: stretch;
+}

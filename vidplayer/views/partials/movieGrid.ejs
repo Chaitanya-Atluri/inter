@@ -1,0 +1,9 @@
+<% movieCoverClass = locals.large ? 'movie-cover-large' : '' %>
+<% movieGridClass = locals.large ? 'movie-grid-large' : '' %>
+<div class="movie-grid <%= movieGridClass %>">
+  <% movies.forEach(movie => { %>
+    <a href="/movies/<%= movie.id %>">
+      <img class="movie-cover <%= movieCoverClass %>" src="<%= movie.coverImagePath %>">
+    </a>
+  <% }) %>
+</div>

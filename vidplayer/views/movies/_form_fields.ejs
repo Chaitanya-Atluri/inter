@@ -1,0 +1,37 @@
+<div class="form-row">
+  <div class="form-item">
+    <label>Title</label>
+    <input type="text" name="title" value="<%= movie.title %>">
+  </div>
+  <div class="form-item">
+    <label>Genre</label>
+    <select name="genre">
+      <% genres.forEach(genre => { %>
+        <% if (genre.id === movie.genre) { %>
+          <option selected label="<%= genre.name %>" value="<%= genre.id %>">
+        <% } else { %>
+          <option label="<%= genre.name %>" value="<%= genre.id %>">
+        <% } %>
+      <% }) %>
+    </select>
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-item">
+    <label>Publish Date</label>
+    <input type="date" name="releaseDate"
+          value="<%= movie.releaseDate == null ? '' : movie.releaseDate.toISOString().split('T')[0] %>">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-item form-item-no-grow">
+    <label>Cover</label>
+    <input type="file" name="cover" class="movie-cover filepond">
+  </div>
+  <div class="form-item">
+    <label>Description</label>
+    <textarea name="description"><%= movie.description %></textarea>
+  </div>
+</div>

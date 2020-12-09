@@ -1,0 +1,10 @@
+<h2 class="page-header"><%= genre.name %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/genres/<%= genre.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm',
+              { url: `/genres/${genre.id}` }) %>
+</div>
+<% if (moviesByGenre.length > 0) { %>
+  <h2 class="page-header">Movies By Genre</h2>
+  <%- include('../partials/movieGrid', { movies: moviesByGenre }) %>
+<% } %>
