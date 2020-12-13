@@ -6,6 +6,9 @@
       <a class="btn btn-primary" href="/movies/<%= movie.id %>/edit">Edit</a>
       <%- include('../partials/deleteForm', { url: `/movies/${movie.id}` }) %>
       <a class="btn btn-primary movie-details-genre-button" href="/genres/<%= movie.genre.id %>">View Genre</a>
+	  
+	  <a class="btn btn-primary" href="/movies/<%= movie.id %>/play">Play</a>
+	  
     </div>
   </div>
   <div class="movie-details-grid">
